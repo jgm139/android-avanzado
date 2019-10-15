@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Notifications extends AppCompatActivity {
+public class Notifications_Toast extends AppCompatActivity {
     private Button button_press_me;
     private EditText editText;
     private Context context;
@@ -20,7 +20,7 @@ public class Notifications extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notifications);
+        setContentView(R.layout.activity_notifications_toast);
 
         context = getApplicationContext();
 
