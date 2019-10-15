@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Button button_drawables;
+    private Button button_notifications;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,11 +17,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button_drawables = findViewById(R.id.button_drawables);
+        button_notifications = findViewById(R.id.button_notifications);
 
         button_drawables.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Drawables.class);
+                startActivity(intent);
+            }
+        });
+
+        button_notifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Notifications.class);
                 startActivity(intent);
             }
         });
