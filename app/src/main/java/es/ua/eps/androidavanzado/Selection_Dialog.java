@@ -2,12 +2,10 @@ package es.ua.eps.androidavanzado;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
