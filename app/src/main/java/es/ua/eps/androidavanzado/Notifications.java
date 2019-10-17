@@ -10,6 +10,7 @@ import android.widget.Button;
 public class Notifications extends AppCompatActivity {
     private Button button_toast;
     private Button button_snackbar;
+    private Button button_dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class Notifications extends AppCompatActivity {
 
         button_toast = findViewById(R.id.button_toast);
         button_snackbar = findViewById(R.id.button_snackbar);
+        button_dialog = findViewById(R.id.button_dialog);
 
         button_toast.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,14 @@ public class Notifications extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Notifications.this, Notifications_Snackbar.class);
+                startActivity(intent);
+            }
+        });
+
+        button_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Notifications.this, Selection_Dialog.class);
                 startActivity(intent);
             }
         });
