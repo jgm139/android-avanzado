@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:theme="@style/sStyle" android:name=".sSecundary" />
-        <activity android:theme="@style/sStyle" android:name=".sPrincipal" />
+        <activity android:name=".pComponents"></activity>
+        <activity
+            android:name=".sSecundary"
+            android:theme="@style/sStyle" />
+        <activity
+            android:name=".sPrincipal"
+            android:theme="@style/sStyle" />
         <activity android:name=".Drawables" />
         <activity android:name=".MainActivity">
             <intent-filter>
