@@ -9,12 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Notifications_StateBar"></activity>
+        <activity android:name=".pComponents" />
+        <activity
+            android:name=".sSecundary"
+            android:theme="@style/sStyle" />
+        <activity
+            android:name=".sPrincipal"
+            android:theme="@style/sStyle" />
+        <activity android:name=".Drawables" />
+        <activity android:name=".Notifications_StateBar" />
         <activity android:name=".Selection_Dialog" />
         <activity android:name=".Notifications" />
         <activity android:name=".Notifications_Snackbar" />
         <activity android:name=".Notifications_Toast" />
-        <activity android:name=".Drawables" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

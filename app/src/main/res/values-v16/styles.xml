@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -8,15 +9,16 @@
 
     <style name="sStyle" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@color/color_fondo</item>
+        <item name="android:fontFamily">sans-serif</item>
         <item name="android:textColor">@color/color_texto</item>
         <item name="android:textAppearanceLarge">@style/EstiloTitulo</item>
         <item name="buttonStyle">@style/EstiloBoton</item>
-
     </style>
 
     <style name="EstiloTitulo" parent="TextAppearance.AppCompat.Large">
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
+
     </style>
 
     <style name="EstiloBoton">
@@ -24,5 +26,4 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:layout_gravity">center</item>
     </style>
-
 </resources>

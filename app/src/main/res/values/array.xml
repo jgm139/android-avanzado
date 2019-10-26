@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="quotes">
+        <item>"No one can make you feel inferior without your consent. - Eleanor Roosevelt"</item>
+        <item>"Nothing is certain except for death and taxes. - Benjamin Franklin"</item>
+        <item>"Speak softly and carry a big stick. - Theodore Roosevelt"</item>
+        <item>"For those to whom much is given, much is required. - The Bible"</item>
+    </string-array>
+</resources>
