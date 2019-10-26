@@ -29,7 +29,7 @@ public class Selection_Dialog extends AppCompatActivity{
 
         button_size = findViewById(R.id.button_size);
         button_colour = findViewById(R.id.button_colour);
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textView_main);
         container = findViewById(R.id.layout_dialog_selection);
 
         button_colour.setOnClickListener(new View.OnClickListener() {
