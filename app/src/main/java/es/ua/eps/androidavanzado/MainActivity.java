@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button_styles;
     private Button button_per_components;
     private Button button_services;
+    private Button button_gestures;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         button_styles = findViewById(R.id.button_styles);
         button_per_components = findViewById(R.id.button_per_components);
         button_services = findViewById(R.id.button_services);
+        button_gestures = findViewById(R.id.button_gestures);
 
         button_drawables.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Services.class);
+                startActivity(intent);
+            }
+        });
+
+        button_gestures.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Gestures.class);
                 startActivity(intent);
             }
         });
