@@ -8,7 +8,7 @@
 
     <view
         android:id="@+id/view2"
-        class="es.ua.eps.androidavanzado.MotionView"
+        class="es.ua.eps.androidavanzado.GestureView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

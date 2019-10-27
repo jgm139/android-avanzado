@@ -6,29 +6,33 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.Nullable;
+import androidx.core.view.GestureDetectorCompat;
 
-public class MotionView extends View {
+public class GestureView extends View {
+    private final int DEFAULT_SIZE = 100;
+    private int colour = Color.RED;
+    private boolean redColour = true;
     private float x, y;
     private int width, height;
-    private final int DEFAULT_SIZE = 100;
     private RectF rectangle;
+    private GestureDetectorCompat detectorCompat;
 
-    public MotionView(Context context) {
+    public GestureView(Context context) {
         super(context);
         init();
     }
 
-    public MotionView(Context context, @Nullable AttributeSet attrs) {
+    public GestureView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public MotionView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public GestureView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -38,20 +42,23 @@ public class MotionView extends View {
         this.height = getHeight();
         this.x = width/2;
         this.y = height/2;
+
+        ListenerGestures lg = new ListenerGestures();
+        detectorCompat = new GestureDetectorCompat(getContext(), lg);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        Log.d("DebugApp", "Drawing");
-
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
         paint.setStrokeWidth(50);
-        paint.setColor(Color.RED);
+        colour = redColour ?  Color.RED : Color.BLUE;
+        paint.setColor(colour);
 
         rectangle = new RectF(x, y, x + DEFAULT_SIZE, y + DEFAULT_SIZE);
 
         canvas.drawRect(rectangle, paint);
+        this.invalidate();
     }
 
     @Override
@@ -91,30 +98,37 @@ public class MotionView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        super.onTouchEvent(event);
-        int action = event.getAction();
+        return detectorCompat.onTouchEvent(event);
+    }
 
-        switch (action) {
-            case MotionEvent.ACTION_DOWN:
-                this.x = event.getX();
-                this.y = event.getY();
-                this.invalidate();
-                break;
-            case MotionEvent.ACTION_MOVE:
-                float nx = event.getX();
-                float ny = event.getY();
+    public class ListenerGestures extends GestureDetector.SimpleOnGestureListener {
 
-                if (nx >= this.x && nx <= this.x + DEFAULT_SIZE && ny >= this.y && ny <= this.y + DEFAULT_SIZE) {
-                    this.x = nx;
-                    this.y = ny;
+        @Override
+        public boolean onDown(MotionEvent e) {
+            float nx = e.getX();
+            float ny = e.getY();
 
-                    this.invalidate();
-                    return true;
-                } else {
-                    return false;
-                }
+            return nx >= x && nx <= x + DEFAULT_SIZE && ny >= y && ny <= y + DEFAULT_SIZE;
         }
 
-        return true;
+        @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            x = e2.getX();
+            y = e2.getY();
+
+            return true;
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {
+            redColour = !redColour;
+
+            return true;
+        }
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            return super.onFling(e1, e2, velocityX, velocityY);
+        }
     }
 }
