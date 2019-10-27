@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         button_gestures.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Gestures.class);
+                Intent intent = new Intent(MainActivity.this, TapAndGestures.class);
                 startActivity(intent);
             }
         });
