@@ -28,12 +28,12 @@ public class TapAndGestures extends AppCompatActivity {
             }
         });
 
-        /*button_gestures.setOnClickListener(new View.OnClickListener() {
+        button_gestures.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TapAndGestures.this, Gestures.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 }
