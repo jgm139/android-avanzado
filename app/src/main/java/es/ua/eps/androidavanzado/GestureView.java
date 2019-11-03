@@ -18,6 +18,7 @@ public class GestureView extends View {
     private int colour = Color.RED;
     private boolean redColour = true;
     private float x, y;
+    private float vx, vy;
     private int width, height;
     private RectF rectangle;
     private GestureDetectorCompat detectorCompat;
@@ -58,6 +59,10 @@ public class GestureView extends View {
         rectangle = new RectF(x, y, x + DEFAULT_SIZE, y + DEFAULT_SIZE);
 
         canvas.drawRect(rectangle, paint);
+
+        paint.setStrokeWidth(2);
+
+        canvas.drawLine(x, y, vx, vy, paint);
         this.invalidate();
     }
 
@@ -128,7 +133,13 @@ public class GestureView extends View {
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            return super.onFling(e1, e2, velocityX, velocityY);
+            float dx = e2.getX() - e1.getX();
+            float dy = e2.getY() - e1.getY();
+
+            vx = dx * velocityX;
+            vy = dy * velocityY;
+
+            return true;
         }
     }
 }

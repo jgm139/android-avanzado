@@ -96,11 +96,6 @@ public class TapView extends View {
 
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                this.x = event.getX();
-                this.y = event.getY();
-                this.invalidate();
-                break;
-            case MotionEvent.ACTION_MOVE:
                 float nx = event.getX();
                 float ny = event.getY();
 
@@ -113,6 +108,12 @@ public class TapView extends View {
                 } else {
                     return false;
                 }
+
+            case MotionEvent.ACTION_MOVE:
+                this.x = event.getX();
+                this.y = event.getY();
+                this.invalidate();
+                break;
         }
 
         return true;
