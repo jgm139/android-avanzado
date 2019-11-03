@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 public class Services extends AppCompatActivity {
     private Button button_init;
     private Button button_stop;
+    private Button button_reproductor;
     private CheckBox finish_with_activity;
     private Context context;
 
@@ -24,7 +25,16 @@ public class Services extends AppCompatActivity {
 
         button_init = findViewById(R.id.button_init);
         button_stop = findViewById(R.id.button_stop);
+        button_reproductor = findViewById(R.id.button_reproductor);
         finish_with_activity = findViewById(R.id.finish_with_activity);
+
+        button_reproductor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Services.this, Reproductor.class);
+                startActivity(intent);
+            }
+        });
 
         button_init.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -23,12 +23,12 @@
         android:id="@+id/textView_timer_1_10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="64dp"
         android:text="Contador"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_services" />
+        app:layout_constraintTop_toBottomOf="@+id/button_reproductor" />
 
     <Button
         android:id="@+id/button_init"
@@ -65,5 +65,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_init" />
+
+    <Button
+        android:id="@+id/button_reproductor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Reproductor de audio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_services" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
